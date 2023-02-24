@@ -1,26 +1,29 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
-
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app.routing';
+import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
-import { EmailValidatorDirective } from './email-validator.directive';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    EmailValidatorDirective,
-  ],
   imports: [
-    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    ComponentsModule,
+    RouterModule,
     AppRoutingModule,
   ],
-  providers: [
-  ],
-  bootstrap: [
+  declarations: [
     AppComponent,
+    AdminLayoutComponent,
+
   ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }
